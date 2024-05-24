@@ -6,6 +6,7 @@ import type { DefineComponent } from 'vue';
 import { createInertiaApp } from '@inertiajs/vue3';
 import { resolvePageComponent } from 'laravel-vite-plugin/inertia-helpers';
 import { ZiggyVue } from '../../vendor/tightenco/ziggy';
+import {i18nVue} from "laravel-vue-i18n";
 
 const appName = window.document.getElementsByTagName('title')[0]?.innerText || 'Laravel';
 
@@ -20,7 +21,12 @@ createInertiaApp({
             .use(plugin)
             .use(ZiggyVue, (window as any).Ziggy);
 
-        app.mount(el);
+        app.use(i18nVue, {
+            resolve: async (lang: string) => {
+                const languages = import.meta.glob('../../lang/*.json');
+                return await languages[`../../lang/${lang}.json`]();
+            }
+        }).mount(el);
         return app;
     },
     progress: {
