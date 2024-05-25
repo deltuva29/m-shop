@@ -1,3 +1,6 @@
 {
-  "Welcome, :name": "Labas, :name"
+    "Welcome, :name": "Labas, :name",
+    "Discount sale": "Nuolaida",
+    "Discount sales for :name": "Nuolaida :name",
+    "View all discounts": "Peržiūrėti visas nuolaidas"
 }
