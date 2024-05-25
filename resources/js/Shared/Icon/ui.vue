@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 import { type IconType } from './types';
 import { MinusIcon, PlusIcon, ShoppingBagIcon } from "@heroicons/vue/24/outline";
-import { ICON_CART, ICON_MINUS, ICON_PLUS } from "@/Shared/Icon/constants";
+import { ICON_CART, ICON_MINUS, ICON_PLUS } from "./constants";
 
 interface Props {
   type: IconType;
