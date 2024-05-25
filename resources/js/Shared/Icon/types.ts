@@ -1,6 +1,10 @@
 type IconType =
   'cart' |
   'plus' |
-  'minus';
+  'minus' |
+  'phone' |
+  'x' |
+  'instagram' |
+  'fb';
 
 export { type IconType };

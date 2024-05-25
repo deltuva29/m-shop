@@ -4,6 +4,6 @@ import MyShopLayout from "@/Layouts/MyShopLayout.vue";
 
 <template>
   <MyShopLayout>
-    <slot></slot>
+    <slot/>
   </MyShopLayout>
 </template>

@@ -4,6 +4,7 @@ import { Header } from "@/Widgets/Header";
 import { Container } from "@/Shared/Container";
 import { Content } from "@/Shared/Content";
 import { Cards } from "@/Widgets/Cards";
+import { Footer } from "@/Widgets/Footer";
 import { trans } from 'laravel-vue-i18n';
 
 import { saleCards } from '@/data/saleCardsData';
@@ -19,6 +20,7 @@ import { saleCards } from '@/data/saleCardsData';
       />
     </Container>
   </Content>
+  <Footer/>
 </template>
 
 <style scoped>
