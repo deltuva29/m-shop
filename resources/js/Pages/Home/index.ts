@@ -1,0 +1,1 @@
+export { default as Home } from './Welcome.vue';
