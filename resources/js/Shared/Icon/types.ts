@@ -1,4 +1,8 @@
 type IconType =
+  'bars' |
+  'bag' |
+  'heart' |
+  'truck' |
   'cart' |
   'plus' |
   'minus' |

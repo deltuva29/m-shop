@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 import { type IconType } from './types';
-import { MinusIcon, PlusIcon, ShoppingBagIcon } from "@heroicons/vue/24/outline";
-import { ICON_CART, ICON_FB, ICON_MINUS, ICON_PLUS } from "./constants";
+import { Bars3Icon, HeartIcon, MinusIcon, PlusIcon, ShoppingBagIcon, ShoppingCartIcon, TruckIcon } from "@heroicons/vue/24/outline";
+import { ICON_BAG, ICON_BARS, ICON_CART, ICON_FB, ICON_HEART, ICON_MINUS, ICON_PLUS, ICON_TRUCK } from "./constants";
 import { FwbFooterIcon } from "flowbite-vue";
 
 interface Props {
@@ -13,7 +13,19 @@ const { type } = props;
 </script>
 
 <template>
+  <Bars3Icon
+    v-if="type === ICON_BARS"
+    class="h-5 w-5"/>
   <ShoppingBagIcon
+    v-if="type === ICON_BAG"
+    class="h-5 w-5"/>
+  <HeartIcon
+    v-if="type === ICON_HEART"
+    class="h-5 w-5"/>
+  <TruckIcon
+    v-if="type === ICON_TRUCK"
+    class="h-5 w-5"/>
+  <ShoppingCartIcon
     v-if="type === ICON_CART"
     class="h-5 w-5"/>
   <MinusIcon
