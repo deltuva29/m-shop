@@ -8,14 +8,52 @@ const saleInfo = ref({
   listLinkHref: "/",
 });
 
-const saleItems = ref([{
-  id: 0,
-  img: product1JPG,
-  name: trans('MacBook Pro 2024'),
-  sale: 50,
-  price: 50.50,
-  priceWithSale: 44.50,
-  count: 0,
-}]);
+const saleItems = ref([
+  {
+    id: 0,
+    img: product1JPG,
+    name: trans('MacBook Pro 2024'),
+    sale: 50,
+    price: 1550.50,
+    priceWithSale: 1744.50,
+    count: 0,
+  },
+  {
+    id: 1,
+    img: product1JPG,
+    name: trans('MacBook Pro 2024'),
+    sale: 50,
+    price: 2050.50,
+    priceWithSale: 3044.50,
+    count: 0,
+  },
+  {
+    id: 2,
+    img: product1JPG,
+    name: trans('MacBook Pro 2024'),
+    sale: 50,
+    price: 2350.50,
+    priceWithSale: 3144.50,
+    count: 0,
+  },
+  {
+    id: 3,
+    img: product1JPG,
+    name: trans('MacBook Pro 2024'),
+    sale: 50,
+    price: 2250.50,
+    priceWithSale: 3644.50,
+    count: 0,
+  },
+  {
+    id: 4,
+    img: product1JPG,
+    name: trans('MacBook Pro 2024'),
+    sale: 50,
+    price: 3750.50,
+    priceWithSale: 5044.50,
+    count: 0,
+  }
+]);
 
 export { saleInfo, saleItems };

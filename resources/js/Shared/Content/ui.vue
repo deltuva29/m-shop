@@ -2,7 +2,7 @@
 </script>
 
 <template>
-  <main class="container mx-auto px-4">
+  <main class="container mx-auto h-screen px-4">
     <slot/>
   </main>
 </template>
