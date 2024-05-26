@@ -21,7 +21,7 @@ const { isOpen: isOpenMegaMenu, toggle: toggleMegaMenu, close: closeMegaMenu } =
               M-Shop
             </span>
             <div class="flex md:order-1 space-x-2">
-              <button @mouseenter="toggleMegaMenu" v-click-outside="closeMegaMenu" type="button" class="hidden md:block px-5 py-2.5 text-sm font-medium text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 rounded-lg text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 transition-all">
+              <button @click="toggleMegaMenu" v-click-outside="closeMegaMenu" type="button" class="hidden md:block px-5 py-2.5 text-sm font-medium text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 rounded-lg text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 transition-all">
               <span class="flex items-center">
                 <Icon
                   :type="ICON_BARS"
