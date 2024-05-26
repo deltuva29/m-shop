@@ -7,7 +7,7 @@ import { Cards } from "@/Widgets/Cards";
 import { Footer } from "@/Widgets/Footer";
 import { trans } from 'laravel-vue-i18n';
 
-import { saleCards } from '@/data/saleCardsData';
+import { saleInfo, saleItems } from '@/data/cards/data';
 </script>
 
 <template>
@@ -16,7 +16,8 @@ import { saleCards } from '@/data/saleCardsData';
   <Content>
     <Container>
       <Cards
-        :data="saleCards.data"
+        :info="saleInfo"
+        :items="saleItems"
       />
     </Container>
   </Content>
