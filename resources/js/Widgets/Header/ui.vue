@@ -2,31 +2,12 @@
 import { Container } from "@/Shared/Container";
 import { ICON_BARS, ICON_CART } from "@/Shared/Icon/constants";
 import { Icon } from "@/Shared/Icon";
-import { avatar, dropdownMenu, logo, userMenu, userProfile } from "@/data/headerData";
-import { ref } from "vue";
+import { avatar, dropdownMenu, logo, megaMenu, userMenu, userProfile } from "@/data/header/data";
+import { useToggle } from "@/composobles/useToggle";
 
-const isOpenDropdownMenu = ref<boolean>(false);
-const isOpenMegaMenu = ref<boolean>(false);
+const { isOpen: isOpenDropdownMenu, toggle: toggleDropdownMenu, close: closeDropdownMenu } = useToggle(false);
+const { isOpen: isOpenMegaMenu, toggle: toggleMegaMenu, close: closeMegaMenu } = useToggle(false);
 
-const toggleDropdownMenu = () => {
-  isOpenDropdownMenu.value = !isOpenDropdownMenu.value;
-};
-
-const closeDropdownMenu = () => {
-  if (isOpenDropdownMenu.value) {
-    isOpenDropdownMenu.value = false;
-  }
-};
-
-const toggleMegaMenu = () => {
-  isOpenMegaMenu.value = !isOpenMegaMenu.value;
-};
-
-const closeMegaMenu = () => {
-  if (isOpenMegaMenu.value) {
-    isOpenMegaMenu.value = false;
-  }
-};
 </script>
 
 <template>
@@ -84,7 +65,6 @@ const closeMegaMenu = () => {
                 </button>
               </ul>
             </div>
-            <!-- Dropdown menu -->
             <Transition
               name="fade"
               enter-active-class="transition ease-out duration-100 transform"
@@ -108,70 +88,28 @@ const closeMegaMenu = () => {
             </Transition>
           </div>
         </div>
-        <div v-show="isOpenMegaMenu" id="mega-menu-full-dropdown" class="absolute top-16 mt-1 bg-white border-gray-200 shadow-sm border-y dark:bg-gray-800 dark:border-gray-600">
-          <div class="grid max-w-screen-xl px-4 py-5 mx-auto text-gray-900 dark:text-white sm:grid-cols-2 md:grid-cols-3 md:px-6">
-            <ul aria-labelledby="mega-menu-full-dropdown-button">
-              <li>
-                <a href="#" class="block p-3 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-700">
-                  <div class="font-semibold">Online Stores</div>
-                  <span class="text-sm text-gray-500 dark:text-gray-400">Connect with third-party tools that you're already using.</span>
-                </a>
-              </li>
-              <li>
-                <a href="#" class="block p-3 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-700">
-                  <div class="font-semibold">Segmentation</div>
-                  <span class="text-sm text-gray-500 dark:text-gray-400">Connect with third-party tools that you're already using.</span>
-                </a>
-              </li>
-              <li>
-                <a href="#" class="block p-3 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-700">
-                  <div class="font-semibold">Marketing CRM</div>
-                  <span class="text-sm text-gray-500 dark:text-gray-400">Connect with third-party tools that you're already using.</span>
-                </a>
-              </li>
-            </ul>
-            <ul>
-              <li>
-                <a href="#" class="block p-3 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-700">
-                  <div class="font-semibold">Online Stores</div>
-                  <span class="text-sm text-gray-500 dark:text-gray-400">Connect with third-party tools that you're already using.</span>
-                </a>
-              </li>
-              <li>
-                <a href="#" class="block p-3 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-700">
-                  <div class="font-semibold">Segmentation</div>
-                  <span class="text-sm text-gray-500 dark:text-gray-400">Connect with third-party tools that you're already using.</span>
-                </a>
-              </li>
-              <li>
-                <a href="#" class="block p-3 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-700">
-                  <div class="font-semibold">Marketing CRM</div>
-                  <span class="text-sm text-gray-500 dark:text-gray-400">Connect with third-party tools that you're already using.</span>
-                </a>
-              </li>
-            </ul>
-            <ul class="hidden md:block">
-              <li>
-                <a href="#" class="block p-3 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-700">
-                  <div class="font-semibold">Audience Management</div>
-                  <span class="text-sm text-gray-500 dark:text-gray-400">Connect with third-party tools that you're already using.</span>
-                </a>
-              </li>
-              <li>
-                <a href="#" class="block p-3 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-700">
-                  <div class="font-semibold">Creative Tools</div>
-                  <span class="text-sm text-gray-500 dark:text-gray-400">Connect with third-party tools that you're already using.</span>
-                </a>
-              </li>
-              <li>
-                <a href="#" class="block p-3 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-700">
-                  <div class="font-semibold">Marketing Automation</div>
-                  <span class="text-sm text-gray-500 dark:text-gray-400">Connect with third-party tools that you're already using.</span>
-                </a>
-              </li>
-            </ul>
+        <Transition
+          name="fade"
+          enter-active-class="transition ease-out duration-100 transform"
+          enter-from-class="opacity-0 scale-95"
+          enter-to-class="opacity-100 scale-100"
+          leave-active-class="transition ease-in duration-75 transform"
+          leave-from-class="opacity-100 scale-100"
+          leave-to-class="opacity-0 scale-95"
+        >
+          <div v-show="isOpenMegaMenu" id="mega-menu-full-dropdown" class="absolute top-16 mt-1 bg-white border-gray-200 shadow-sm border-y dark:bg-gray-800 dark:border-gray-600">
+            <div class="grid max-w-screen-xl px-4 py-5 mx-auto text-gray-900 dark:text-white sm:grid-cols-2 md:grid-cols-3 md:px-6">
+              <ul v-for="item in megaMenu" :key="item.category" aria-labelledby="mega-menu-full-dropdown-button">
+                <li v-for="link in item.links" :key="link.label">
+                  <a href="#" class="block p-3 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-700">
+                    <div v-text="link.label" class="font-semibold"></div>
+                    <span v-text="link.desc" class="text-sm text-gray-500 dark:text-gray-400"></span>
+                  </a>
+                </li>
+              </ul>
+            </div>
           </div>
-        </div>
+        </Transition>
       </nav>
     </Container>
   </div>

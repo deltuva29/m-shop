@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 import { Link } from '@inertiajs/vue3';
 import { Container } from "@/Shared/Container";
-import { copyright, links, logo, myShop, socials } from "@/data/footerData";
+import { copyright, links, logo, myShop, socials } from "@/data/footer/data";
 import { FwbFooter, FwbFooterBrand, FwbFooterCopyright, FwbFooterLink, FwbFooterLinkGroup, } from 'flowbite-vue';
 import { Icon } from '@/Shared/Icon';
 </script>

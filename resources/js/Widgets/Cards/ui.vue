@@ -2,23 +2,15 @@
 import { ProductCard } from "@/entities/product/card";
 import { Typography } from "@/Shared/Typography";
 import { type CardsProps } from "./types";
-import { trans } from "laravel-vue-i18n";
 
-const {data} = defineProps<CardsProps>();
-const {
-  title = trans("Empty title"),
-  listLinkText = trans("Empty list link text"),
-  listLinkHref = "/",
-  items,
-} = data;
-
+const { info, items } = defineProps<CardsProps>();
 </script>
 
 <template>
   <section class="cards">
     <div class="cards__header">
       <Typography
-        v-text="title"
+        v-text="info.title"
         class="header__title title" tagName="h3" bold>
       </Typography>
     </div>
