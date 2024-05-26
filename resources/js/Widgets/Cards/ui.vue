@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { ProductCard } from "@/entities/product/card";
 import { type CardsProps } from "./types";
+import { Typography } from "@/Shared/Typography";
 
 const { info, items } = defineProps<CardsProps>();
 </script>
@@ -8,10 +9,11 @@ const { info, items } = defineProps<CardsProps>();
 <template>
   <section class="cards">
     <div class="cards__header">
-      <!--      <Typography-->
-      <!--        v-text="info.title"-->
-      <!--        class="header__title title" tagName="h3" bold>-->
-      <!--      </Typography>-->
+      <Typography
+        v-text="info.title"
+        class="font-extrabold text-2xl my-4 header__title title" tagName="h3" bold>
+      </Typography>
+      <a :href="info.listLinkHref" v-text="info.listLinkText" class="text-blue-500"></a>
     </div>
     <div class="cards__list">
       <ProductCard v-for="(product, i) in items" :key="product.name + i" :data="product">
@@ -27,7 +29,6 @@ const { info, items } = defineProps<CardsProps>();
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 1.5rem;
   }
 
   &__list {
