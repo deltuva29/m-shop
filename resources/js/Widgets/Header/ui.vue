@@ -97,7 +97,7 @@ const { isOpen: isOpenMegaMenu, toggle: toggleMegaMenu, close: closeMegaMenu } =
           leave-from-class="opacity-100 scale-100"
           leave-to-class="opacity-0 scale-95"
         >
-          <div v-show="isOpenMegaMenu" id="mega-menu-full-dropdown" class="absolute top-16 mt-1 bg-white border-gray-200 shadow-sm border-y dark:bg-gray-800 dark:border-gray-600">
+          <div v-show="isOpenMegaMenu" id="mega-menu-full-dropdown" class="absolute top-16 mt-1 z-20 bg-white border-gray-200 shadow-sm border-y dark:bg-gray-800 dark:border-gray-600">
             <div class="grid max-w-screen-xl px-4 py-5 mx-auto text-gray-900 dark:text-white sm:grid-cols-2 md:grid-cols-3 md:px-6">
               <ul v-for="item in megaMenu" :key="item.category" aria-labelledby="mega-menu-full-dropdown-button">
                 <li v-for="link in item.links" :key="link.label">
