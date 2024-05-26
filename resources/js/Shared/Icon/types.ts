@@ -1,6 +1,14 @@
 type IconType =
+  'bars' |
+  'bag' |
+  'heart' |
+  'truck' |
   'cart' |
   'plus' |
-  'minus';
+  'minus' |
+  'phone' |
+  'x' |
+  'instagram' |
+  'fb';
 
 export { type IconType };
