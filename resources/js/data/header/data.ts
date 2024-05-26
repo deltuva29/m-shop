@@ -1,15 +1,8 @@
 import { reactive } from "vue";
 import { trans } from "laravel-vue-i18n";
-import type { IconType } from "@/Shared/Icon";
 import type { UserProfile } from "./types";
 
 export const logo = 'https://flowbite.com/docs/images/logo.svg';
-
-export const userMenu = reactive<{ icon: IconType, label: string, href: string }[]>([
-  { icon: 'heart', label: trans('Favorites'), href: '/' },
-  { icon: 'truck', label: trans('Orders'), href: '/' },
-  { icon: 'cart', label: trans('Cart'), href: '/' },
-]);
 
 export const avatar = 'https://xsgames.co/randomusers/avatar.php?g=male&name=Mindaugas';
 
