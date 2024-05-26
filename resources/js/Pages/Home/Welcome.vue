@@ -6,6 +6,7 @@ import { Content } from "@/Shared/Content";
 import { Cards } from "@/Widgets/Cards";
 import { Footer } from "@/Widgets/Footer";
 import { trans } from 'laravel-vue-i18n';
+import { MainCarousel } from "@/features/main-carousel";
 
 import { saleInfo, saleItems } from '@/data/cards/data';
 </script>
@@ -14,6 +15,7 @@ import { saleInfo, saleItems } from '@/data/cards/data';
   <Head :title="trans('Welcome')"/>
   <Header/>
   <Content>
+    <MainCarousel/>
     <Container>
       <Cards
         :info="saleInfo"

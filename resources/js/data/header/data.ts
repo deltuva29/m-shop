@@ -11,7 +11,7 @@ export const userMenu = reactive<{ icon: IconType, label: string, href: string }
   { icon: 'cart', label: trans('Cart'), href: '/' },
 ]);
 
-export const avatar = 'https://xsgames.co/randomusers/avatar.php?g=female&name=Mindaugas';
+export const avatar = 'https://xsgames.co/randomusers/avatar.php?g=male&name=Mindaugas';
 
 export const userProfile: UserProfile = {
   name: 'Mindaugas',
