@@ -1,5 +1,6 @@
 import './bootstrap';
 import '../css/app.css';
+import 'vue3-carousel/dist/carousel.css';
 
 import type { DefineComponent } from 'vue';
 import { createApp, h } from 'vue';
