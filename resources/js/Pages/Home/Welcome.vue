@@ -14,8 +14,8 @@ import { saleInfo, saleItems } from '@/data/cards/data';
 <template>
   <Head :title="trans('Welcome')"/>
   <Header/>
+  <MainCarousel/>
   <Content>
-    <MainCarousel/>
     <Container>
       <Cards
         :info="saleInfo"
