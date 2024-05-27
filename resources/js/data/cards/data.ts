@@ -4,7 +4,7 @@ import product1JPG from "@/assets/product-1.jpg";
 
 const saleInfo = ref({
   title: trans('Discount sale'),
-  listLinkText: trans('View all discounts'),
+  listLinkText: trans('View all'),
   listLinkHref: "/",
 });
 
