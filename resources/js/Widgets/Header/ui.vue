@@ -1,19 +1,17 @@
 <script lang="ts" setup>
 import { Container } from "@/Shared/Container";
 import { ICON_BARS } from "@/Shared/Icon/constants";
-import { Icon, type IconType } from "@/Shared/Icon";
-import { logo, megaMenu } from "@/data/header/data";
+import { Icon } from "@/Shared/Icon";
+import { logo, megaMenuItems, navItems } from "@/data/header/data";
 import { Navigation } from "@/features/navigation";
-import { reactive } from "vue";
-import { trans } from "laravel-vue-i18n";
+import { MegaMenu } from "@/features/mega-menu";
+import { useToggle } from "@/composobles/useToggle";
 
-const navItems = reactive<{ icon: IconType, label: string, count: number, link: string }[]>([
-  { icon: 'heart', label: trans('Favorites'), count: 0, link: '/' },
-  { icon: 'truck', label: trans('Orders'), count: 0, link: '/' },
-  { icon: 'cart', label: trans('Cart'), count: 2, link: '/' },
-]);
-
-// const { isOpen: isOpenMegaMenu, toggle: toggleMegaMenu, close: closeMegaMenu } = useToggle(false);
+const {
+  isOpen: isOpenMenu,
+  toggle: toggleMenu,
+  close: closeMenu
+} = useToggle(false);
 
 </script>
 
@@ -28,13 +26,13 @@ const navItems = reactive<{ icon: IconType, label: string, count: number, link: 
               M-Shop
             </span>
             <div class="flex md:order-1 space-x-2">
-              <button @click="toggleMegaMenu" v-click-outside="closeMegaMenu" type="button" class="hidden md:block px-5 py-2.5 text-sm font-medium text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 rounded-lg text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 transition-all">
-              <span class="flex items-center">
-                <Icon
-                  :type="ICON_BARS"
-                />
-                <span class="hidden sm:block ms-2">Catalog</span>
-              </span>
+              <button @click="toggleMenu" v-click-outside="closeMenu" type="button" class="hidden md:block px-5 py-2.5 text-sm font-medium text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 rounded-lg text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 transition-all">
+                <span class="flex items-center">
+                  <Icon
+                    :type="ICON_BARS"
+                  />
+                  <span class="hidden sm:block ms-2">Catalog</span>
+                </span>
               </button>
 
               <button type="button" data-collapse-toggle="navbar-search" aria-controls="navbar-search" aria-expanded="false" class="hidden sm:hidden md:hidden text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5 me-1">
@@ -58,28 +56,10 @@ const navItems = reactive<{ icon: IconType, label: string, count: number, link: 
             :data="navItems"
           />
         </div>
-        <Transition
-          name="fade"
-          enter-active-class="transition ease-out duration-100 transform"
-          enter-from-class="opacity-0 scale-95"
-          enter-to-class="opacity-100 scale-100"
-          leave-active-class="transition ease-in duration-75 transform"
-          leave-from-class="opacity-100 scale-100"
-          leave-to-class="opacity-0 scale-95"
-        >
-          <div v-show="isOpenMegaMenu" id="mega-menu-full-dropdown" class="absolute top-16 mt-1 z-20 bg-white border-gray-200 shadow-sm border-y dark:bg-gray-800 dark:border-gray-600">
-            <div class="grid max-w-screen-xl px-4 py-5 mx-auto text-gray-900 dark:text-white sm:grid-cols-2 md:grid-cols-3 md:px-6">
-              <ul v-for="item in megaMenu" :key="item.category" aria-labelledby="mega-menu-full-dropdown-button">
-                <li v-for="link in item.links" :key="link.label">
-                  <a href="#" class="block p-3 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-700">
-                    <div v-text="link.label" class="font-semibold"></div>
-                    <span v-text="link.desc" class="text-sm text-gray-500 dark:text-gray-400"></span>
-                  </a>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </Transition>
+        <MegaMenu
+          :isOpen="isOpenMenu"
+          :data="megaMenuItems"
+        />
       </nav>
     </Container>
   </div>
