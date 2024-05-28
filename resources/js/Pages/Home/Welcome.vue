@@ -8,7 +8,7 @@ import { Footer } from "@/Widgets/Footer";
 import { trans } from 'laravel-vue-i18n';
 import { MainCarousel } from "@/features/main-carousel";
 
-import { saleInfo, saleItems } from '@/data/cards/data';
+import { newInfo, newItems, saleInfo, saleItems } from '@/data/cards/data';
 </script>
 
 <template>
@@ -16,10 +16,17 @@ import { saleInfo, saleItems } from '@/data/cards/data';
   <Header/>
   <MainCarousel/>
   <Content>
-    <Container>
+    <Container :style="{ margin: '40px auto' }">
       <Cards
         :info="saleInfo"
         :items="saleItems"
+      />
+    </Container>
+
+    <Container :style="{ margin: '40px auto' }">
+      <Cards
+        :info="newInfo"
+        :items="newItems"
       />
     </Container>
   </Content>
