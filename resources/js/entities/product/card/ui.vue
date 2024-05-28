@@ -16,7 +16,7 @@ const {
 
 <template>
   <article class="product-card">
-    <div class="w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+    <div class="w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow-sm-light dark:bg-gray-800 dark:border-gray-700">
       <div class="relative">
         <a href="#">
           <img class="p-8 rounded-t-lg" :src="img" alt="product image"/>
