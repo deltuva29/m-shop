@@ -17,7 +17,11 @@ const { info, items } = defineProps<CardsProps>();
     </div>
     <div class="cards__list">
       <ProductCard v-for="(product, i) in items" :key="product.name + i" :data="product">
-        ...
+        <template v-if="product.sale" #headerTopLeft>
+          <span class="absolute top-2 start-2 z-10">
+            <span v-text="`-${product.sale}%`" class="bg-blue-400 text-white text-sm font-medium me-2 px-2.5 py-0.5 rounded dark:bg-red-900 dark:text-red-300"></span>
+          </span>
+        </template>
       </ProductCard>
     </div>
   </section>

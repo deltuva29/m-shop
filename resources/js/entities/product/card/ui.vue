@@ -18,11 +18,11 @@ const {
   <article class="product-card">
     <div class="w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow-sm-light dark:bg-gray-800 dark:border-gray-700">
       <div class="relative">
+        <div class="top__left">
+          <slot name="headerTopLeft"></slot>
+        </div>
         <a href="#">
           <img class="p-8 rounded-t-lg" :src="img" alt="product image"/>
-          <span class="absolute top-2 start-2 z-10">
-            <span v-text="`-${sale}%`" class="bg-blue-400 text-white text-sm font-medium me-2 px-2.5 py-0.5 rounded dark:bg-red-900 dark:text-red-300"></span>
-          </span>
           <span class="absolute top-2 end-2 z-10">
             <Icon type="heart"/>
           </span>
