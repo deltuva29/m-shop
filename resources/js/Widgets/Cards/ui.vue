@@ -1,9 +1,18 @@
 <script setup lang="ts">
 import { ProductCard } from "@/entities/product/card";
-import { type CardsProps } from "./types";
+import { type Card, type CardsProps } from "./types";
 import { Typography } from "@/Shared/Typography";
+import { Like } from "@/features/like";
 
 const { info, items } = defineProps<CardsProps>();
+const emit = defineEmits<{
+  (e: 'on-change-card', product: Card): void
+}>();
+
+const toggleLike = (product: Card) =>
+  emit('on-change-card', {
+    ...product, isLiked: !product.isLiked
+  });
 </script>
 
 <template>
@@ -17,6 +26,12 @@ const { info, items } = defineProps<CardsProps>();
     </div>
     <div class="cards__list">
       <ProductCard v-for="(product, i) in items" :key="product.name + i" :data="product">
+        <template #headerTopRight>
+          <Like
+            :isLiked="product.isLiked"
+            @click="() => toggleLike(product)"
+          />
+        </template>
         <template v-if="product.sale" #headerTopLeft>
           <span class="absolute top-2 start-2 z-10">
             <span v-text="`-${product.sale}%`" class="bg-blue-400 text-white text-sm font-medium me-2 px-2.5 py-0.5 rounded dark:bg-red-900 dark:text-red-300"></span>
