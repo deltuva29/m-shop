@@ -25,7 +25,12 @@ const toggleLike = (product: Card) =>
       <a :href="info.listLinkHref" v-text="info.listLinkText" class="text-blue-500"></a>
     </div>
     <div class="cards__list">
-      <ProductCard v-for="(product, i) in items" :key="product.name + i" :data="product">
+      <ProductCard
+        v-for="(product, i) in items"
+        :key="product.name + i"
+        :data="product"
+        @on-change="(p) => emit('on-change-card', p)"
+      >
         <template #headerTopRight>
           <Like
             :isLiked="product.isLiked"

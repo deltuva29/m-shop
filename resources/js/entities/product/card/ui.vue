@@ -3,6 +3,10 @@ import { type Card } from "./types";
 import { trans } from "laravel-vue-i18n";
 
 const props = defineProps<{ data: Card }>();
+const emit = defineEmits<{
+  (e: 'on-change', product: Card): void
+}>();
+
 const {
   img,
   name = trans("Empty product name"),
