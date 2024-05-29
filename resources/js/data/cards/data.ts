@@ -17,6 +17,7 @@ const saleItems = ref([
     price: 1550.50,
     priceWithSale: 1744.50,
     count: 0,
+    isLiked: false,
   },
   {
     id: 1,
@@ -26,6 +27,7 @@ const saleItems = ref([
     price: 2050.50,
     priceWithSale: 3044.50,
     count: 0,
+    isLiked: true,
   },
   {
     id: 2,
@@ -35,6 +37,7 @@ const saleItems = ref([
     price: 2350.50,
     priceWithSale: 3144.50,
     count: 0,
+    isLiked: false,
   },
   {
     id: 3,
@@ -44,6 +47,7 @@ const saleItems = ref([
     price: 2250.50,
     priceWithSale: 3644.50,
     count: 0,
+    isLiked: false,
   },
   {
     id: 4,
@@ -53,6 +57,7 @@ const saleItems = ref([
     price: 3750.50,
     priceWithSale: 5044.50,
     count: 0,
+    isLiked: false,
   }
 ]);
 
@@ -71,6 +76,7 @@ const newItems = ref([
     price: 1550.50,
     priceWithSale: 1744.50,
     count: 0,
+    isLiked: false,
   },
   {
     id: 1,
@@ -80,6 +86,7 @@ const newItems = ref([
     price: 2050.50,
     priceWithSale: 3044.50,
     count: 0,
+    isLiked: false,
   },
   {
     id: 2,
@@ -89,6 +96,7 @@ const newItems = ref([
     price: 2350.50,
     priceWithSale: 3144.50,
     count: 0,
+    isLiked: false,
   },
   {
     id: 3,
@@ -98,6 +106,7 @@ const newItems = ref([
     price: 2250.50,
     priceWithSale: 3644.50,
     count: 0,
+    isLiked: false,
   },
   {
     id: 4,
@@ -107,6 +116,7 @@ const newItems = ref([
     price: 3750.50,
     priceWithSale: 5044.50,
     count: 0,
+    isLiked: false,
   }
 ]);
 

@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import { type Card } from "./types";
 import { trans } from "laravel-vue-i18n";
-import { Icon } from "@/Shared/Icon";
 
 const props = defineProps<{ data: Card }>();
 const {
@@ -21,11 +20,11 @@ const {
         <div class="top__left">
           <slot name="headerTopLeft"></slot>
         </div>
+        <div class="top__right">
+          <slot name="headerTopRight"></slot>
+        </div>
         <a href="#">
           <img class="p-8 rounded-t-lg" :src="img" alt="product image"/>
-          <span class="absolute top-2 end-2 z-10">
-            <Icon type="heart"/>
-          </span>
         </a>
       </div>
       <div class="px-2 pb-2">

@@ -6,6 +6,7 @@ interface Card {
   priceWithSale: number;
   count?: number;
   sale?: number;
+  isLiked?: boolean;
 }
 
 export { type Card };
