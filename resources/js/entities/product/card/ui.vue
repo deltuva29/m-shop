@@ -1,11 +1,14 @@
 <script setup lang="ts">
 import { type Card } from "./types";
 import { trans } from "laravel-vue-i18n";
+import { ref } from "vue";
 
 const props = defineProps<{ data: Card }>();
 const emit = defineEmits<{
   (e: 'on-change', product: Card): void
 }>();
+
+const isHovered = ref<boolean>(false);
 
 const {
   img,
@@ -18,7 +21,12 @@ const {
 </script>
 
 <template>
-  <article class="product-card">
+  <article
+    class="product-card rounded-lg"
+    @mouseover="isHovered = true"
+    @mouseleave="isHovered = false"
+    :class="{ 'is-hovered': isHovered }"
+  >
     <div class="w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow-sm-light dark:bg-gray-800 dark:border-gray-700">
       <div class="relative">
         <div class="top__left">
@@ -67,5 +75,13 @@ const {
   </article>
 </template>
 
-<style scoped>
+<style lang="postcss" scoped>
+.product-card {
+  @apply relative transition-all;
+}
+
+.is-hovered {
+  @apply border-2 border-blue-300;
+  transition: border-color 0.3s;
+}
 </style>
