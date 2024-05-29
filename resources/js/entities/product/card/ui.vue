@@ -41,8 +41,11 @@ const {
       </div>
       <div class="px-2 pb-2">
         <div class="flex justify-between items-center">
-          <span v-html="`${price} &euro;`" class="text-sm font-bold text-gray-900 dark:text-white"></span>
-          <span v-html="`${priceWithSale} &euro;`" class="text-sm font-normal text-gray-500 dark:text-white"></span>
+          <span v-html="`${price} &euro;`" class="text-lg font-bold text-blue-500"></span>
+          <span class="flex flex-col">
+            <span v-text="trans('Regular price')" class="text-xs text-gray-400"></span>
+            <span v-html="`${priceWithSale} &euro;`" class="text-sm font-bold text-black dark:text-white"></span>
+          </span>
         </div>
         <a href="#">
           <h5 v-text="name" class="text-sm font-medium tracking-tight text-gray-900 dark:text-white"></h5>
