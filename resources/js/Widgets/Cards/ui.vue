@@ -57,7 +57,7 @@ const toggleLike = (product: Card) =>
 
   &__list {
     display: grid;
-    gap: 1.5rem;
+    gap: 0.5rem;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
 
     @media (max-width: 600px) {
