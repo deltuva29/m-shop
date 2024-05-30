@@ -21,12 +21,7 @@ const {
 </script>
 
 <template>
-  <article
-    class="product-card rounded-lg"
-    @mouseover="isHovered = true"
-    @mouseleave="isHovered = false"
-    :class="{ 'is-hovered': isHovered }"
-  >
+  <article class="product-card rounded-lg">
     <div class="w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow-sm-light dark:bg-gray-800 dark:border-gray-700">
       <div class="relative">
         <div class="top__left">
