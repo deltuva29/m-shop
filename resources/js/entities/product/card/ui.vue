@@ -40,7 +40,7 @@ const {
         </a>
       </div>
       <div class="px-2 pb-2">
-        <div class="flex justify-between items-center">
+        <div class="flex flex-col lg:flex-row justify-between items-start lg:items-center mb-1">
           <span v-html="`${price} &euro;`" class="text-lg font-bold text-blue-500"></span>
           <span class="flex flex-col">
             <span v-text="trans('Regular price')" class="text-xs text-gray-400"></span>
