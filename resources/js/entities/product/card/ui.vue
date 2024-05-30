@@ -48,7 +48,7 @@ const {
           </span>
         </div>
         <a href="#">
-          <h5 v-text="name" class="text-sm font-medium tracking-tight text-gray-900 dark:text-white"></h5>
+          <h5 v-text="name" class="text-md font-medium tracking-tight text-gray-900 dark:text-white"></h5>
         </a>
         <div class="flex items-center mt-2.5 mb-5">
           <div class="flex items-center space-x-1 rtl:space-x-reverse">
