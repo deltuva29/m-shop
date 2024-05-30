@@ -61,6 +61,7 @@ const toggleLike = (product: Card) =>
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
 
     @media (max-width: 600px) {
+      gap: 0;
       grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
     }
 
