@@ -21,12 +21,7 @@ const {
 </script>
 
 <template>
-  <article
-    class="product-card rounded-lg"
-    @mouseover="isHovered = true"
-    @mouseleave="isHovered = false"
-    :class="{ 'is-hovered': isHovered }"
-  >
+  <article class="product-card rounded-lg">
     <div class="w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow-sm-light dark:bg-gray-800 dark:border-gray-700">
       <div class="relative">
         <div class="top__left">
@@ -40,7 +35,7 @@ const {
         </a>
       </div>
       <div class="px-2 pb-2">
-        <div class="flex justify-between items-center">
+        <div class="flex flex-col lg:flex-row justify-between items-start lg:items-center mb-1">
           <span v-html="`${price} &euro;`" class="text-lg font-bold text-blue-500"></span>
           <span class="flex flex-col">
             <span v-text="trans('Regular price')" class="text-xs text-gray-400"></span>
@@ -48,7 +43,7 @@ const {
           </span>
         </div>
         <a href="#">
-          <h5 v-text="name" class="text-sm font-medium tracking-tight text-gray-900 dark:text-white"></h5>
+          <h5 v-text="name" class="text-md font-medium tracking-tight text-gray-900 dark:text-white"></h5>
         </a>
         <div class="flex items-center mt-2.5 mb-5">
           <div class="flex items-center space-x-1 rtl:space-x-reverse">
